@@ -6,7 +6,7 @@ finalStr = ""
 if number > 5:
     finalStr = "and is greater than 5"
 elif number == 0:
-    finalStr = "and is zero"
+    finalStr = "and is 0"
 elif number < 6:
     finalStr = "and is less than 6 and not 0"
 
