@@ -9,14 +9,14 @@ if __name__ == "__main__":
 
     if arlen != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit()
+        exit(1)
     a = int(argv[1])
     b = int(argv[3])
     op = argv[2]
 
     if op not in {"+", "-", "*", "/"}:
         print("Unknown operator. Available operators: +, -, * and /")
-        exit()
+        exit(1)
 
     if op == "+":
         print(f"{a} + {b} = {add(a, b)}")
