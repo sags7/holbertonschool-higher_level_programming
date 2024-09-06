@@ -1,19 +1,19 @@
 #!/usr/bin/python3
 
-import sys
+from sys import argv
 from calculator_1 import add, sub, mul, div
 
 
 def my_calc(a, b):
-    arlen = len(sys.argv) - 1
-    op = sys.argv[2]
+    arlen = len(argv) - 1
+    op = argv[2]
 
     if arlen != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit()
+        exit()
     if op not in {"+", "-", "*", "/"}:
         print("Unknown operator. Available operators: +, -, * and /")
-        sys.exit()
+        exit()
     if op == "+":
         print(f"{a} + {b} = {add(a, b)}")
     elif op == "-":
@@ -25,4 +25,4 @@ def my_calc(a, b):
 
 
 if __name__ == "__main__":
-    my_calc(int(sys.argv[1]), int(sys.argv[3]))
+    my_calc(int(argv[1]), int(argv[3]))
