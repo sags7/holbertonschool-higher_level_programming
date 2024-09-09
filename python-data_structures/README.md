@@ -1,0 +1,1 @@
+Python data structure exercises for higher level programming part of the course
