@@ -484,3 +484,114 @@ guillaume@ubuntu:~/$
 **Directory:** python-more_data_structures
 **File:** 12-roman_to_int.py
   
+
+### 13. Weighted average!
+Write a function that returns the weighted average of all integers tuple (score, weight)
+
+- Prototype: def weight_average(my_list=[]):
+- Returns 0 if the list is empty
+- You are not allowed to import any module
+````
+guillaume@ubuntu:~/$ cat 100-main.py
+#!/usr/bin/python3
+weight_average = __import__('100-weight_average').weight_average
+
+my_list = [(1, 2), (2, 1), (3, 10), (4, 2)]
+# = ((1 * 2) + (2 * 1) + (3 * 10) + (4 * 2)) / (2 + 1 + 10 + 2)
+result = weight_average(my_list)
+print("Average: {:0.2f}".format(result))
+
+guillaume@ubuntu:~/$ ./100-main.py
+Average: 2.80
+guillaume@ubuntu:~/$ 
+````
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-more_data_structures
+**File:** 100-weight_average.py
+
+### 14. Squared by using map
+Write a function that computes the square value of all integers of a matrix using map
+
+- Prototype: def square_matrix_map(matrix=[]):
+- matrix is a 2 dimensional array
+- Returns a new matrix:
+- Same size as matrix
+- Each value should be the square of the value of the input
+- Initial matrix should not be modified
+- You are not allowed to import any module
+- You have to use map
+- You are not allowed to use for or while
+- Your file should be max 3 lines
+````
+guillaume@ubuntu:~/$ cat 101-main.py
+#!/usr/bin/python3
+square_matrix_map = \
+    __import__('101-square_matrix_map').square_matrix_map
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+new_matrix = square_matrix_map(matrix)
+print(new_matrix)
+print(matrix)
+
+guillaume@ubuntu:~/$ ./101-main.py
+[[1, 4, 9], [16, 25, 36], [49, 64, 81]]
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+guillaume@ubuntu:~/$ 
+````
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-more_data_structures
+**File:** 101-square_matrix_map.py
+
+### 15. Delete by value
+Write a function that deletes keys with a specific value in a dictionary.
+
+- Prototype: def complex_delete(a_dictionary, value):
+- If the value doesn’t exist, the dictionary won’t change
+- All keys having the searched value have to be deleted
+- You are not allowed to import any module
+````
+guillaume@ubuntu:~/$ cat 102-main.py
+#!/usr/bin/python3
+complex_delete = __import__('102-complex_delete').complex_delete
+print_sorted_dictionary = \
+    __import__('6-print_sorted_dictionary').print_sorted_dictionary
+
+a_dictionary = {'lang': "C", 'track': "Low", 'pref': "C", 'ids': [1, 2, 3]}
+new_dict = complex_delete(a_dictionary, 'C')
+print_sorted_dictionary(a_dictionary)
+print("--")
+print_sorted_dictionary(new_dict)
+
+print("--")
+print("--")
+new_dict = complex_delete(a_dictionary, 'c_is_fun')
+print_sorted_dictionary(a_dictionary)
+print("--")
+print_sorted_dictionary(new_dict)
+
+guillaume@ubuntu:~/$ ./102-main.py
+ids: [1, 2, 3]
+track: Low
+--
+ids: [1, 2, 3]
+track: Low
+--
+--
+ids: [1, 2, 3]
+track: Low
+--
+ids: [1, 2, 3]
+track: Low
+guillaume@ubuntu:~/$ 
+````
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-more_data_structures
+**File:** 102-complex_delete.py

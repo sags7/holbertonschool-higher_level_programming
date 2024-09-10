@@ -2,7 +2,4 @@
 
 
 def square_matrix_simple(matrix=[]):
-    pows = []
-    for element in matrix:
-        pows += [list(map(lambda x: x**2, element))]
-    return pows
+    return [list(map(lambda x: x**2, element)) for element in matrix]
