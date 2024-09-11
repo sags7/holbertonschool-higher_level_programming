@@ -15,5 +15,6 @@ def list_division(myList1, myList2, listLength):
         except IndexError:
             print("out of range")
             retVal.append(0)
-        finally: pass
+        finally:
+            pass
     return retVal
