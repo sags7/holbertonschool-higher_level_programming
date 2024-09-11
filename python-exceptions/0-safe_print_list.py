@@ -12,3 +12,4 @@ def safe_print_list(myList=[], x=0):
     except:
         print("unknown error")
     print()
+    return printed
