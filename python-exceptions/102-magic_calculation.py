@@ -1,10 +1,10 @@
-#!/user/bin/python3
+#!/usr/bin/python3
 
 
-def magic_calculations(a, b):
+def magic_calculation(a, b):
     result = 0
     try:
-        for i in range(1, 3):
+        for i in range(a, b):
             if i > a:
                 raise Exception("Too far")
             else:
