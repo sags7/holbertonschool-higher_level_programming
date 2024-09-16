@@ -33,8 +33,14 @@ Now, use it:
         ...
         TypeError: matrix must be a matrix (list of lists) of integers/floats
         
-        Test 04: Too many arguments
+    Test 04: Too many arguments
         >>> matrix_divided([[1,6], [6,10]], 2, 3)
         Traceback (most recent call last):
         ...
         TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+    Test 05 division by zero
+        >>> matrix_divided([[1,6], [6,10]], 0)
+        Traceback (most recent call last):
+        ...
+        ZeroDivisionError: division by zero

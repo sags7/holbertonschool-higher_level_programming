@@ -39,4 +39,7 @@ def matrix_divided(matrix, div):
 
     retVal = [[round((element / div), 2) for element in row] for row in matrix]
 
+    if not all(isinstance(element, (int, float)) for element in row for row in retVal):
+        TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
     return retVal
