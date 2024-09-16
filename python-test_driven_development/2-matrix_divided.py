@@ -25,13 +25,9 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
     if not isinstance(matrix, list):
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats"
-            )
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     if not all(isinstance(row, list) for row in matrix):
-        raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats"
-            )
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     retVal = []
     for row in matrix:
@@ -46,7 +42,7 @@ def matrix_divided(matrix, div):
 
     retVal = [[round((element / div), 2) for element in row] for row in matrix]
 
-    if not all(isinstance((e, (int, float)) for e in row) for row in retVal):
+    if not all(isinstance(e, (int, float)) for e in row for row in retVal):
         TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     return retVal
