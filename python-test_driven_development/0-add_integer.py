@@ -6,8 +6,10 @@ add_integer adds two integers and returns the result. For example,
 9
 
 Args:
-    a: first param.
-    b: second param, defaults to 98
+    a (int, float): first param.
+    b (int, float): second param, defaults to 98
+Returns:
+    The sum of a and b as an int
 """
 
 
