@@ -61,3 +61,15 @@ Now use it:
     ...
     TypeError: b must be an integer
 
+    Test 08: Handling float overflow
+    >>> add_integer(float('inf'), 5)
+    Traceback (most recent call last):
+      ...
+    OverflowError: cannot convert float infinity to integer
+
+    Test 09: Handling NaN
+    >>> add_integer(1, float('NaN'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
