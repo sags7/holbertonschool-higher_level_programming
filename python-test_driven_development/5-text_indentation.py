@@ -12,8 +12,11 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    skipChar = False
     for character in text:
         if character in ".?:":
             print(f"{character}\n")
-        elif character not in " ":
+            skipChar = True
+        elif not skipChar and character in " ":
+            skipChar = False
             print(character, end="")
