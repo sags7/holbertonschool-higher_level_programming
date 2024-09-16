@@ -4,6 +4,10 @@ add_integer adds two integers and returns the result. For example,
 
 >>>> add_integer(5, 4)
 9
+
+Args:
+    a: first param.
+    b: second param, defaults to 98
 """
 
 
