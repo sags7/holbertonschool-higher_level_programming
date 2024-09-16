@@ -1,0 +1,22 @@
+The ``4-print_square`` module
+=============================
+
+using ``print_square``
+----------------------
+
+First, import ``print_square`` from ``4-print_square``
+>>> print_square = __import__("4-print_square").print_square
+
+Now, use it:
+
+        Test 01: incorrect input
+            >>> print_square("Cheese")
+            Traceback (most recent call last):
+            ...
+            TypeError: size must be an integer
+
+        Test 02: negative numbers
+            >>> print_square(-1)
+            Traceback (most recent call last):
+            ... 
+            ValueError: size must be >= 0
