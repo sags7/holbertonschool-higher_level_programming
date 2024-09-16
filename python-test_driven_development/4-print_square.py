@@ -17,4 +17,3 @@ def print_square(size):
         raise ValueError("size must be >= 0")
     for y in range(size):
         print("".join("#" for x in range(size)))
-    print()
