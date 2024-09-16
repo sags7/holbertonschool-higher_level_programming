@@ -79,3 +79,7 @@ Now use it:
     ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
+    Test 11: Single argument with default ValueError
+    >>> add_integer(2)
+    100
+
