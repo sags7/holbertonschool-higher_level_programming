@@ -6,8 +6,9 @@ add_integer adds two integers and returns the result. For example,
 9
 """
 
+
 def add_integer(a, b=98):
-    
+
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
 
