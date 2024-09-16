@@ -39,8 +39,12 @@ Now, use it:
         ...
         TypeError: matrix_divided() takes 2 positional arguments but 3 were given
 
-    Test 05 division by zero
+    Test 05: division by zero
         >>> matrix_divided([[1,6], [6,10]], 0)
         Traceback (most recent call last):
         ...
         ZeroDivisionError: division by zero
+
+    Test 06: correct arguments
+        >>> matrix_divided([[2,6], [6,10]], 2)
+        [[1, 3], [3, 5]]
