@@ -51,4 +51,4 @@ Now, use it:
 
     Test 07: division by infinity
         >>> matrix_divided([[2,6], [6,10]], float("inf"))
-        [[0, 0], [0, 0]]
+        [[0.0, 0.0], [0.0, 0.0]]

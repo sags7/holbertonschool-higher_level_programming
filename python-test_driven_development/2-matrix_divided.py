@@ -30,7 +30,7 @@ def matrix_divided(matrix, div):
     if not all(isinstance(row, list) for row in matrix):
         raise TypeError(err)
     if div == float("inf") or div == -float("inf"):
-        return [[0 for element in row] for row in matrix]
+        return [[0.0 for element in row] for row in matrix]
 
     retVal = []
     for row in matrix:
