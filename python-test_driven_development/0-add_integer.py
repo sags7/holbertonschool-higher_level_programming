@@ -25,7 +25,7 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     if abs(a) > 1e308 or abs(b) > 1e308:
-        raise OverflowError("One or both numbers are too large")
+        raise OverflowError("cannot convert float infinity to integer")
 
     if a != a or b != b:
         raise ValueError("cannot convert float NaN to integer")
