@@ -12,7 +12,7 @@ def add_integer(a, b=98):
     9
 
     Args:
-        a (int, float): first param.
+       a (int, float): first param.
        b (int, float): second param, defaults to 98
     Returns:
         The sum of a and b as an int
