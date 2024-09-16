@@ -8,7 +8,6 @@ First, import ``print_square`` from ``4-print_square``
 >>> print_square = __import__("4-print_square").print_square
 
 Now, use it:
-
         Test 01: incorrect input
             >>> print_square("Cheese")
             Traceback (most recent call last):
@@ -20,3 +19,15 @@ Now, use it:
             Traceback (most recent call last):
             ... 
             ValueError: size must be >= 0
+
+        Test 03: correct input
+            >>> print_square(3)
+            ###
+            ###
+            ###
+
+        Test 04: missing an argument
+            >>> print_square()
+            Traceback (most recent call last):
+            ...
+            TypeError: print_square() missing 1 required positional argument: 'size'
