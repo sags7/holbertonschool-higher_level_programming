@@ -19,4 +19,6 @@ def text_indentation(text):
             skipChar = True
         elif skipChar and character in " ":
             skipChar = False
+            continue
+        else:
             print(character, end="")
