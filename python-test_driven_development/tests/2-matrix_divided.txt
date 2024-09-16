@@ -48,3 +48,7 @@ Now, use it:
     Test 06: correct arguments
         >>> matrix_divided([[2,6], [6,10]], 2)
         [[1.0, 3.0], [3.0, 5.0]]
+
+    Test 07: division by infinity
+        >>> matrix_divided([[2,6], [6,10]], float("inf"))
+        [[0, 0], [0, 0]]
