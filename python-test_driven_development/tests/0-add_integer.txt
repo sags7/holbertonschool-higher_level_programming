@@ -54,7 +54,7 @@ Now use it:
     >>> add_integer(1, None)
     Traceback (most recent call last):
     ...
-    TypeError: b must be an integer 
+    TypeError: b must be an integer
     
     >>> add_integer(1, (1,1))
     Traceback (most recent call last):
