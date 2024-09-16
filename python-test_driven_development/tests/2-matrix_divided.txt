@@ -31,9 +31,9 @@ Now, use it:
         >>> matrix_divided("Cheese", 2)
         Traceback (most recent call last):
         ...
-        TypeError: div must be a number
-    
-    Test 04: Too many arguments
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+        
+        Test 04: Too many arguments
         >>> matrix_divided([[1,6], [6,10]], 2, 3)
         Traceback (most recent call last):
         ...
