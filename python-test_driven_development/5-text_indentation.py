@@ -17,8 +17,8 @@ def text_indentation(text):
         if character in ".?:":
             print(f"{character}\n")
             skipChar = True
-        elif skipChar and character in " ":
-            skipChar = False
+        elif skipChar and character in "    ":
             continue
         else:
+            skipChar = False
             print(character, end="")
