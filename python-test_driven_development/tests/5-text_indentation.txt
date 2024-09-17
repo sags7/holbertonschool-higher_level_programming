@@ -30,3 +30,7 @@ Now, use it:
     Test 04: correct arguments
         >>> text_indentation("My friend")
         My friend
+
+    Test 05: string with a blank line
+        >>> text_indentation(" ")
+        
