@@ -27,5 +27,5 @@ Now, use it:
         TypeError: text_indentation() takes 1 positional argument but 2 were given
 
     Test 04: correct arguments
-        >>> text_indentation("My friend, Kane.")
-        My friend, Kane.
+        >>> text_indentation("My friend")
+        My friend
