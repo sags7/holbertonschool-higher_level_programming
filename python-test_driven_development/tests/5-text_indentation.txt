@@ -5,6 +5,7 @@ Using ``text_indentation``
 --------------------------
 
 First, import ``text_indentation`` from ``5-text_indentation``
+>>> text_indentation = __import__("5-text_indentation").text_indentation
 
 Now, use it:
 
