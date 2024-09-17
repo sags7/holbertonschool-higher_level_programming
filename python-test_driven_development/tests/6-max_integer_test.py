@@ -11,9 +11,9 @@ max_integer = __import__("6-max_integer").max_integer
 class TestMaxInteger(unittest.TestCase):
 
     def test_max_end(self):
-        self.assertEqual(max_integer([2, 4, 6], 6))
-        self.assertEqual(max_integer([-2, -4, 0], 0))
-        self.assertEqual(max_integer([-2, -4, 5, 10], 10))
+        self.assertEqual(max_integer([2, 4, 6]), 6)
+        self.assertEqual(max_integer([-2, -4, 0]), 0)
+        self.assertEqual(max_integer([-2, -4, 5, 10]), 10)
 
     def test_max_start(self):
         self.assertEqual(max_integer([0, -1, -100]), 0)
@@ -30,7 +30,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, -1, 10]), 10)
         self.assertEqual(max_integer([1, 10, -10]), 10)
 
-    def test_only_negative(self):
+    def test_only_negative (self):
         self.assertEqual(max_integer([-1, -2, -3]), -1)
         self.assertEqual(max_integer([-2, -1, -3]), -1)
         self.assertEqual(max_integer([-1, -200, -3]), -1)
