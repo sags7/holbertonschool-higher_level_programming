@@ -13,6 +13,13 @@ class Square:
     """
 
     def __init__(self, size=0):
+        """
+        Initializes the square with a given size
+
+        Args:
+            size (int, float): the size of the square, default is 0
+        """
+
         self.size = size
 
     @property
@@ -21,4 +28,12 @@ class Square:
 
     @size.setter
     def size(self, size):
-        self.__size = size
+        """validates and sets the size of the square"""
+
+        if not isinstance(size, (float, int)):
+            raise TypeError("size must be a number")
+
+        if size >= 0:
+            self.__size = size
+        else:
+            raise ValueError("size must be a positive number")
