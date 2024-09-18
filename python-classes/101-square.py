@@ -28,7 +28,7 @@ class Square:
     def __str__(self):
         """Returns the square as a string"""
         if self.size == 0:
-            return "\n"
+            return ""
 
         result = "\n" * self.position[1]
         for i in range(self.size):
