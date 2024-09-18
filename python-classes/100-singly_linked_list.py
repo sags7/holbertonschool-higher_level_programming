@@ -16,11 +16,13 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """
-        Initializes a Node with the given data and a reference to the next node.
+        Initializes a Node with the given data and
+        a reference to the next node.
 
         Args:
             data (int): The data to be stored in the node.
-            next_node (Node): A reference to the next node in the list (default is None).
+            next_node (Node): A reference to the next node
+            in the list (default is None).
 
         Raises:
             TypeError: If data is not an integer.
@@ -101,7 +103,8 @@ class SinglyLinkedList:
         node's data printed on a new line.
 
         Returns:
-            str: A string representation of the list, with each node's data on a new line.
+            str: A string representation of the list,
+            with each node's data on a new line.
         """
         retVal = []
         current_node = self.__head
@@ -112,7 +115,8 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a new node into the correct sorted position in the list (increasing order).
+        Inserts a new node into the correct sorted position
+        in the list (increasing order).
 
         Args:
             value (int): The data value for the new node.
@@ -120,8 +124,9 @@ class SinglyLinkedList:
         Raises:
             TypeError: If value is not an integer.
 
-        The list is sorted in increasing order, and this method ensures the new node is
-        inserted into its correct position based on the value of the data.
+        The list is sorted in increasing order, and this method
+        ensures the new node is inserted into its correct position
+        based on the value of the data.
         """
         if not isinstance(value, int):
             raise TypeError("value must be an int")
@@ -135,7 +140,8 @@ class SinglyLinkedList:
 
         current_node = self.__head
         while (
-            current_node.next_node is not None and current_node.next_node.data < value
+            current_node.next_node is not None and
+            current_node.next_node.data < value
         ):
             current_node = current_node.next_node
 
