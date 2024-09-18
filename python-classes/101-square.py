@@ -26,15 +26,16 @@ class Square:
         self.position = position
 
     def __str__(self):
-        """Prints the square to stdout"""
-        retVal = ""
+        """Returns the square as a string"""
         if self.size == 0:
             return "\n"
-        else:
-            retVal += "\n" * self.position[1]
-            for i in range(self.size):
-                retVal += " " * self.position[0] + "#" * self.size + "\n"
-        return retVal
+
+        result = "\n" * self.position[1]
+        for i in range(self.size):
+            result += " " * self.position[0] + "#" * self.size
+            if i < self.size - 1:
+                result += "\n"
+        return result
 
     @property
     def size(self):
