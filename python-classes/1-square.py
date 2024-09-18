@@ -20,3 +20,13 @@ class Square:
             size (int, float): the size of the square, default is 0
         """
         self.size = size
+
+    @property
+    def size(self):
+        """returns the size of the square"""
+        raise AttributeError("'Square' object has no attribute 'size'")
+
+    @size.setter
+    def size(self, size):
+        """sets the size of the square"""
+        self.__size = size
