@@ -246,3 +246,34 @@ guillaume@ubuntu:~/$
 **GitHub repository:** holbertonschool-higher_level_programming
 **Directory:** python-inheritance
 **File:** 5-base_geometry.py
+
+
+## 6. Improve Geometry
+Write a class BaseGeometry (based on 5-base_geometry.py).
+
+- Public instance method: def area(self): that raises an Exception with the message area() is not implemented
+- You are not allowed to import any module
+
+```
+guillaume@ubuntu:~/$ cat 6-main.py
+#!/usr/bin/python3
+BaseGeometry = __import__('6-base_geometry').BaseGeometry
+
+bg = BaseGeometry()
+
+try:
+    print(bg.area())
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+guillaume@ubuntu:~/$ ./6-main.py
+[Exception] area() is not implemented
+guillaume@ubuntu:~/$ 
+```
+
+No test cases needed
+
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-inheritance
+**File:** 6-base_geometry.py
