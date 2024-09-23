@@ -26,14 +26,20 @@ Then, use it:
     >>> list1.print_sorted()
     [1, 2]
 
-    Test 02: print_sorted, negative number
+    Test 03: print_sorted, negative number
     >>> list1 = MyList()
     >>> list1.append(1)
     >>> list1.append(-1)
     >>> list1.print_sorted()
     [-1, 1]
     
-    Test 02: print_sorted with empty list
+    Test 04: print_sorted with empty list
     >>> list1 = MyList()
     >>> list1.print_sorted()
     []
+
+    Test 05: print_sorted() returns a new list
+    >>> list1 = MyList()
+    >>> list2 = list1.print_sorted()
+    >>> list1 == list2
+    False
