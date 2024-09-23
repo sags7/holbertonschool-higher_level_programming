@@ -25,3 +25,10 @@ Then, use it:
     >>> list1.append(1)
     >>> list1.print_sorted()
     [1, 2]
+
+    Test 02: print_sorted, negative number
+    >>> list1 = MyList()
+    >>> list1.append(1)
+    >>> list1.append(-1)
+    >>> list1.print_sorted()
+    [-1, 1]
