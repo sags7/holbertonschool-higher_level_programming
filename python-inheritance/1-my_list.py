@@ -9,4 +9,3 @@ class MyList(list):
         """prints the MyList, sorted, ascending"""
         newList = sorted(self)
         print(newList)
-        return newList

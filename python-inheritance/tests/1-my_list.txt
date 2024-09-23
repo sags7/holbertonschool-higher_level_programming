@@ -40,6 +40,12 @@ Then, use it:
 
     Test 05: print_sorted() returns a new list
     >>> list1 = MyList()
-    >>> list2 = list1.print_sorted()
-    >>> list1 == list2
-    False
+    >>> list1.append(2)
+    >>> list1.append(1)
+    >>> print(list1)
+    [2, 1]
+    >>> list1.print_sorted()
+    [1, 2]
+    >>> print(list1)
+    [2, 1]
+    
