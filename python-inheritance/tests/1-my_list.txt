@@ -18,3 +18,10 @@ Then, use it:
     >>> list1.append(1)
     >>> print(list1)
     [1]
+
+    Test 02: print_sorted
+    >>> list1 = MyList()
+    >>> list1.append(2)
+    >>> list1.append(1)
+    >>> print_sorted(list1)
+    [1, 2]
