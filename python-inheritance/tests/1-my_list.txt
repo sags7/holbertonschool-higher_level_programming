@@ -12,3 +12,9 @@ Then, use it:
     Test 00: check instantiation
     >>> print(MyList())
     []
+
+    Test 01: append
+    >>> list1 = MyList()
+    >>> list1.append(1)
+    >>> print(list1)
+    [1]
