@@ -32,3 +32,8 @@ Then, use it:
     >>> list1.append(-1)
     >>> list1.print_sorted()
     [-1, 1]
+    
+    Test 02: print_sorted with empty list
+    >>> list1 = MyList()
+    >>> list1.print_sorted()
+    []
