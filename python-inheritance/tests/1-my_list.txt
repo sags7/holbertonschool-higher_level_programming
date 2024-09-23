@@ -1,0 +1,14 @@
+The ''1-my_list'' module
+========================
+
+using ''MyList''
+----------------
+
+First, import the ''MyList'' class from ''1-my_list'' 
+>>> MyList = __import__("1-my_list").MyList
+
+Then, use it:
+
+    Test 00: check instantiation
+    >>> print(MyList())
+    []
