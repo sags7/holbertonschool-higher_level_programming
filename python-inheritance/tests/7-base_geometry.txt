@@ -13,3 +13,10 @@ Now, use it:
     Test 01: check instantiation
     >>> Geom1 = BaseGeometry()
     >>> Geom1.integer_validator("name", 1)
+
+    Test 02: check area()
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
