@@ -42,7 +42,28 @@ Now, use it:
     ...
     ValueError: age must be greater than 0
     
-    Test 06: integer_validator() incorrect Type
+    Test 06: integer_validator() incorrect Type list
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", [4])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test 07: integer_validator() incorrect Type tuple
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test 08: integer_validator() incorrect Type bool
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test 09: integer_validator() incorrect Type None
     >>> Geom1 = BaseGeometry()
     >>> Geom1.integer_validator("age", [4])
     Traceback (most recent call last):
