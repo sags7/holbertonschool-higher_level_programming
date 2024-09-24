@@ -20,3 +20,31 @@ Now, use it:
     Traceback (most recent call last):
     ...
     Exception: area() is not implemented
+
+    Test 03: integer_validator() no value
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age")
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+    
+    Test 04: integer_validator() age 0
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+    
+    Test 05: integer_validator() negative age
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", -4)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+    
+    Test 06: integer_validator() incorrect Type
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", [4])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
