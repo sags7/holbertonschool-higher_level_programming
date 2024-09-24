@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module provides the definition of the Rectangle and BaseGeometry classes"""
+"""Module provides the definition of the Rectangle class"""
 
 
 class Rectangle(BaseGeometry):
