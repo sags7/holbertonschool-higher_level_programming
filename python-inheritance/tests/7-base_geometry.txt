@@ -1,0 +1,13 @@
+The ``7-base_geometry`` module
+===============================
+
+using ``BaseGeometry``
+------------------------
+
+First, import the ''BaseGeometry'' class from ''7-base_geometry''
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+
+Now, use it:
+
+    Test 01:
