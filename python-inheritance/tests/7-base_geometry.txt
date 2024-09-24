@@ -65,7 +65,21 @@ Now, use it:
 
     Test 09: integer_validator() incorrect Type None
     >>> Geom1 = BaseGeometry()
-    >>> Geom1.integer_validator("age", [4])
+    >>> Geom1.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test 10: integer_validator() incorrect Type set
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+    
+    Test 11: integer_validator() incorrect Type String
+    >>> Geom1 = BaseGeometry()
+    >>> Geom1.integer_validator("age", "4")
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
