@@ -13,7 +13,7 @@ def add_attribute(ob, name, value):
             value: the value of the attribute
     """
 
-    if hasattr(ob, __dict__):
+    if hasattr(ob, "__dict__"):
         ob.__dict__[name] = value
     else:
         raise TypeError("can't add new attribute")
