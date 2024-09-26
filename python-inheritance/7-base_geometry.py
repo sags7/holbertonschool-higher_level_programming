@@ -6,8 +6,8 @@ class BaseGeometry:
     """Definition of the BaseGeometry class"""
 
     def area(self):
-        """returns the area of the Rectangle"""
-        return self.__width * self.__height
+        """raises an Exception as it is yet unimplemented"""
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """makes sure that value is of the correct type and value"""
