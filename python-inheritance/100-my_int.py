@@ -10,12 +10,8 @@ class MyInt(int):
 
     def __eq__(self, value):
         """returns False if self == value"""
-        if self == value:
-            return False
-        return True
+        return not super().__eq__(value)
 
     def __ne__(self, value):
         """returns False if self != value"""
-        if self != value:
-            return False
-        return True
+        return not super().__ne__(value)
