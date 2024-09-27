@@ -25,8 +25,9 @@ class Circle(Shape):
     def __init__(self, radius):
         """initialization of Circle"""
         if radius < 0:
-            self.__radius = -1 * self.__radius
-        self.__radius = radius
+            self.__radius = -1 * radius
+        else:
+            self.__radius = radius
 
     def area(self):
         """returns the area of a circle depending on radius"""
