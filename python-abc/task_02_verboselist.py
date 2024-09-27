@@ -31,6 +31,10 @@ class VerboseList(list):
         Removes item at index or the last item if no index is passed.
         """
         if index is None:
-            print("Popped [{}] from the list".format(super().pop()))
+            popped = super().pop()
+            print("Popped [{}] from the list".format(popped))
+            return popped
         else:
+            popped = super().pop(index)
             print("Popped [{}] from the list".format(super().pop(index)))
+            return popped
