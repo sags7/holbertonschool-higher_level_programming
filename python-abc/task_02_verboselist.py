@@ -36,5 +36,5 @@ class VerboseList(list):
             return popped
         else:
             popped = super().pop(index)
-            print("Popped [{}] from the list".format(super().pop(index)))
+            print("Popped [{}] from the list".format(popped))
             return popped
