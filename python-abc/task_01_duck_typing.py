@@ -59,9 +59,3 @@ def shape_info(object):
     """prints the area and perimeter relying on duck typing"""
     print(object.area())
     print(object.perimeter())
-
-
-circ = Circle(5)
-rect = Rectangle(5)
-shape_info(circ)
-shape_info(rect)
