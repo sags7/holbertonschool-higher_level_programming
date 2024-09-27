@@ -54,7 +54,7 @@ Python ABC documentation: https://docs.python.org/3/library/abc.html
 - The abstract method in the base class doesn’t have a body. You need to provide the implementation in the subclasses.
 - If you try to instantiate a class that hasn’t implemented all of its abstract methods, Python will raise a TypeError.
 
-~~~
+```
 $ cat main_00_abc.py 
 #!/usr/bin/env python3
 from task_00_abc import Animal, Dog, Cat
@@ -80,3 +80,66 @@ TypeError: Can't instantiate abstract class Animal with abstract method sound
 **GitHub repository:** holbertonschool-higher_level_programming
 **Directory:** python-abc
 **File:** task_00_abc.py
+
+
+## 1. Shapes, Interfaces, and Duck Typing
+
+**Background:**
+Python employs a concept called “duck typing,” which is concerned with the semantics of objects rather than their inheritance hierarchy. If an object behaves like a duck (i.e., has all the methods and properties of a duck), then it’s considered a duck, regardless of its actual class. This concept allows for flexible and dynamic polymorphism.
+
+In this exercise, we’ll use abstract base classes to design a blueprint for shapes and use duck typing to handle objects of different shapes uniformly.
+
+**Objective:**
+- Create an abstract class named Shape with two abstract methods: area and perimeter.
+- Implement two concrete classes: Circle and Rectangle, both inheriting from Shape. Each class should provide implementations for the area and perimeter methods.
+- Write a standalone function named shape_info that accepts an object of type Shape (by duck typing) and prints its area and perimeter.
+- Test the shape_info function with instances of both Circle and Rectangle.
+
+**Resources:**
+- Python ABC documentation: https://docs.python.org/3/library/abc.html
+- Concept of Duck Typing: https://realpython.com/lessons/duck-typing/
+
+**Instructions:**
+
+**Shape Abstract Class:**
+- Define an abstract class Shape using the ABC package.
+- Within Shape, declare two abstract methods: area and perimeter.
+
+**Circle and Rectangle Classes:**
+- Create a Circle class that inherits from Shape. The constructor (__init__) should accept a radius. Implement the area and perimeter methods.
+- Create a Rectangle class, also inheriting from Shape. Its constructor should accept the width and height. Implement the area and perimeter methods.
+
+**shape_info Function:**
+- Define a function named shape_info that takes a single argument.
+- Without explicitly checking the type of the argument, call its area and perimeter methods (relying on duck typing).
+- Print the area and perimeter of the shape passed to the function.
+
+**Testing:**
+- Instantiate a Circle and a Rectangle.
+- Pass each object to the shape_info function and observe the output.
+
+**Hints:**
+While Python doesn’t enforce interfaces in the same way as statically-typed languages, abstract base classes provide a mechanism to ensure certain methods are implemented in subclasses.
+Duck typing in the shape_info function implies that you shouldn’t use isinstance checks. Instead, trust that the passed object adheres to the Shape interface.
+
+```
+$ cat main_01_duck_typing.py 
+#!/usr/bin/env python3
+from task_01_duck_typing import Circle, Rectangle, shape_info
+
+circle = Circle(radius=5)
+rectangle = Rectangle(width=4, height=7)
+
+shape_info(circle)
+shape_info(rectangle)
+
+$ ./main_01_duck_typing.py 
+Area: 78.53981633974483
+Perimeter: 31.41592653589793
+Area: 28
+Perimeter: 22
+```
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-abc
+**File:** task_01_duck_typing.py
