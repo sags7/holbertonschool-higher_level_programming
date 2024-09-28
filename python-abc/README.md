@@ -252,3 +252,99 @@ No more items.
 **GitHub repository:** holbertonschool-higher_level_programming
 **Directory:** python-abc
 **File:** task_03_countediterator.py
+
+
+## 4. The Enigmatic FlyingFish - Exploring Multiple Inheritance
+
+**Background:**
+In some object-oriented languages, a class can inherit attributes and behaviors from more than one parent class. This is known as multiple inheritance. Python is one of the languages that supports multiple inheritance, which can be a powerful tool, but it also comes with complexities, particularly regarding method resolution order (MRO).
+
+**Objective:**
+Construct a FlyingFish class that inherits from both a Fish class and a Bird class. Within FlyingFish, override methods from both parents. The goal is to comprehend multiple inheritance and how Python determines method resolution order.
+
+**Instructions:**
+
+**Parent Classes Setup:**
+- Create a Fish class with methods swim (which prints “The fish is swimming”) and habitat (which prints “The fish lives in water”).
+- Create a Bird class with methods fly (which prints “The bird is flying”) and habitat (which prints “The bird lives in the sky”).
+
+**Implementing FlyingFish:**
+- Construct a FlyingFish class that inherits from both Fish and Bird.
+- Override the fly method to print “The flying fish is soaring!”.
+- Override the swim method to print “The flying fish is swimming!”.
+- Override the habitat method to print “The flying fish lives both in water and the sky!”.
+
+**Testing and MRO Exploration:**
+- Instantiate an object of the FlyingFish class.
+- Call the fly, swim, and habitat methods and observe the outputs.
+- Use the mro() method or the .__mro__ attribute on the FlyingFish class to investigate the method resolution order. For instance, print(FlyingFish.mro()).
+
+**Hints:**
+Consider the order in which you list the parent classes when defining FlyingFish. It affects the method resolution order.
+While multiple inheritance can be a powerful tool, it should be used judiciously, as it can make the code more complex and harder to read.
+
+```
+$ cat main_04_flyingfish.py 
+#!/usr/bin/env python3
+from task_04_flyingfish import Fish, FlyingFish
+
+flying_fish = FlyingFish()
+flying_fish.swim()
+flying_fish.fly()
+flying_fish.habitat()
+
+$ ./main_04_flyingfish.py 
+The flying fish is swimming!
+The flying fish is soaring!
+The flying fish lives both in water and the sky!
+```
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-abc
+**File:** task_04_flyingfish.py
+
+
+## 5. The Mystical Dragon - Mastering Mixins
+
+**Background:**
+Mixins are a way to add functionality to classes in a modular fashion. They’re not meant to stand alone but are meant to be combined with other classes to add behaviors. By using mixins, you can compose behaviors in classes without the need for deep or rigid inheritance hierarchies.
+
+**Objective:**
+Design two mixin classes, SwimMixin and FlyMixin, each equipped with methods swim and fly respectively. Next, construct a class Dragon that inherits from both these mixins. Your aim is to show that a Dragon instance can both swim and fly.
+
+**Instructions:**
+
+**Creating Mixins:**
+- Design a mixin called SwimMixin with a method swim that prints “The creature swims!”.
+- Design another mixin called FlyMixin with a method fly that prints “The creature flies!”.
+
+**Implementing Dragon:**
+- Construct a class named Dragon that inherits from both SwimMixin and FlyMixin.
+- Within the Dragon class, you can add additional methods or attributes if desired, such as roar, which could print “The dragon roars!”.
+
+- Instantiate an object of the Dragon class named draco.
+- Demonstrate draco‘s abilities by calling the swim, fly, and (if implemented) roar methods.
+
+**Hints:**
+While designing mixins, remember that they should be focused, providing a single piece of functionality. They shouldn’t be overly broad or try to manage too much behavior.
+Mixins allow for code reusability and can be combined in various ways to give objects different capabilities without setting up complex inheritance hierarchies.
+
+```
+$ cat main_05_dragon.py 
+#!/usr/bin/env python3
+from task_05_dragon import Dragon
+
+dragon = Dragon()
+dragon.swim()  # Outputs: The creature swims!
+dragon.fly()   # Outputs: The creature flies!
+dragon.roar()  # Outputs: The dragon roars!
+
+$ ./main_05_dragon.py 
+The creature swims!
+The creature flies!
+The dragon roars!
+```
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-abc
+**File:** task_05_dragon.py
