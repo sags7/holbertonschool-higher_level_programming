@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module provide the definition of the VerboseList class"""
+"""Module provides the definition of the VerboseList class"""
 
 
 from typing import Iterable, SupportsIndex
