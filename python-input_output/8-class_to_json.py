@@ -7,5 +7,5 @@ for JSON serialization of an object:
 
 
 def class_to_json(obj):
-    """returns the string representation of obj"""
-    return str(obj)
+    """returns all the attributes that can be serialized as JSON"""
+    return obj.__dict__
