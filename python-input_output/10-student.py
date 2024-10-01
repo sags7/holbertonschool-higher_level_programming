@@ -15,12 +15,13 @@ class Student:
 
     def to_json(self, attrs=None):
         """returns all the attrs that can be serialized as JSON"""
-        if attrs == None:
+        if attrs is None:
             return self.__dict__
         else:
             retVal = {}
-            if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-                for atr in attrs:
-                    if atr in self.__dict__:
-                        retVal[atr] = self.__dict__[atr]
+            if isinstance(attrs, list):
+                if all(isinstance(attr, str) for attr in attrs):
+                    for atr in attrs:
+                        if atr in self.__dict__:
+                            retVal[atr] = self.__dict__[atr]
             return retVal
