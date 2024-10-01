@@ -120,3 +120,42 @@ guillaume@ubuntu:~/$
 **GitHub repository:** holbertonschool-higher_level_programming
 **Directory:** python-input_output
 **File:** 1-write_file.py
+
+
+## 2. Append to a file
+Write a function that appends a string at the end of a text file (UTF8) and returns the number of characters added:
+
+- Prototype: def append_write(filename="", text=""):
+- If the file doesn’t exist, it should be created
+- You must use the with statement
+- You don’t need to manage file permission or file doesn't exist exceptions.
+- You are not allowed to import any module
+
+```
+guillaume@ubuntu:~/$ cat 2-main.py
+#!/usr/bin/python3
+append_write = __import__('2-append_write').append_write
+
+nb_characters_added = append_write("file_append.txt", "This School is so cool!\n")
+print(nb_characters_added)
+
+guillaume@ubuntu:~/$ cat file_append.txt
+cat: file_append.txt: No such file or directory
+guillaume@ubuntu:~/$ ./2-main.py
+24
+guillaume@ubuntu:~/$ cat file_append.txt
+This School is so cool!
+guillaume@ubuntu:~/$ ./2-main.py
+24
+guillaume@ubuntu:~/$ cat file_append.txt
+This School is so cool!
+This School is so cool!
+guillaume@ubuntu:~/$ 
+```
+
+**No test cases needed**
+
+
+**GitHub repository:** holbertonschool-higher_level_programming
+**Directory:** python-input_output
+**File:** 2-append_write.py
