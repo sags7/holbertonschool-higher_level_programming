@@ -15,8 +15,7 @@ def serialize_to_xml(dictionary, filename):
         item = ET.SubElement(root, key)
         item.text = str(value)
     tree = ET.ElementTree(root)
-    with open(filename, "wb") as file:
-        tree.write(filename, encoding="utf-8", xml_declaration=True)
+    tree.write(filename, encoding="utf-8", xml_declaration=True)
 
 
 def deserialize_from_xml(filename):
@@ -25,13 +24,26 @@ def deserialize_from_xml(filename):
     root = tree.getroot()
     dictionary = {}
     for elem in root:
-        dictionary[elem.tag] = try_convert_to_int(elem.text)
+        dictionary[elem.tag] = try_convert_type(elem.text)
 
     return dictionary
 
 
-def try_convert_to_int(elem):
+def try_convert_type(element):
+    """Tries to convert a string to int, float, or boolean; falls back to string"""
     try:
-        return int(elem)
+        return int(element)
     except ValueError:
-        return elem
+        pass
+
+    try:
+        return float(element)
+    except ValueError:
+        pass
+
+    if element.lower() == "true":
+        return True
+    elif element.lower() == "false":
+        return False
+
+    return element
