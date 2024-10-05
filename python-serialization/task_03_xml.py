@@ -41,9 +41,9 @@ def try_convert_type(element):
     except ValueError:
         pass
 
-    if element.lower() == "true":
+    if element.lower() == "true" or "1":
         return True
-    elif element.lower() == "false":
+    elif element.lower() == "false" or "0":
         return False
 
     return element
