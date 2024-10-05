@@ -31,6 +31,12 @@ def deserialize_from_xml(filename):
 
 def try_convert_type(element):
     """Tries to convert a string to int, float, or boolean; falls back to string"""
+
+    if element.lower() in ("true", "1"):
+        return True
+    elif element.lower() in ("false", "0"):
+        return False
+
     try:
         return int(element)
     except ValueError:
@@ -40,10 +46,5 @@ def try_convert_type(element):
         return float(element)
     except ValueError:
         pass
-
-    if element.lower() in ("true", "1"):
-        return True
-    elif element.lower() in ("false", "0"):
-        return False
 
     return element
