@@ -13,18 +13,21 @@ def fetch_and_print_posts():
     """fetches and prints posts"""
 
     if fetchedRequests.status_code == 200:
+        print(f"Status Code: {fetchedRequests.status_code}")
         fetched_data = fetchedRequests.json()
         for data in fetched_data:
             print(f"{data['title']}")
+    else:
+        print(f"Status Code: {fetchedRequests.status_code}")
 
 
 def fetch_and_save_posts():
     """fetches and saves posts"""
-    
+
     if fetchedRequests.status_code == 200:
         with open("posts.csv", "w") as csv_file:
             writer = csv.writer(csv_file)
-            
+
             writer.writerow(["id", "title", "body"])
             for data in fetchedRequests.json():
                 writer.writerow([data["id"], data["title"], data["body"]])
