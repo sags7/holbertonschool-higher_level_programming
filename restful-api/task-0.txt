@@ -1,0 +1,27 @@
+Difference between HTTP and HTTPS:
+HTTP requests are human readable, so it is easy for anyone with a basic
+understanding of this topic to snoop on what information is being requested.
+HTTPS encrypts these requests using a public and private key so that anyone
+snooping would only see an encrypted request, or a non-human readable request,
+which they can’t decipher without the private key.
+
+HTTP structure:
+An HTTP request consists of a Method(commonly referred to as a HTTP verb),
+a Request Target (which is usually a URL) and a Protocol (which defines
+the structure of the remaining message, such as HTTP/1.1).
+
+Common HTTP methods and status codes:
+POST:
+Sends the needed information for creating a new resource on the server.
+GET:
+Reads information from the server.
+PUT:
+Sends the needed information to update a resource on the server.
+DELETE:
+Deletes a resource from the server.
+
+- 100 level responses are informational responses.
+- 200 level responses are request-successful responses.
+- 300 level responses are redirection responses.
+- 400 level responses are client error responses.
+- 500 responses are server error responses.
