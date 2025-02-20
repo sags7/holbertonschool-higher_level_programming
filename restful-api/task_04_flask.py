@@ -53,8 +53,6 @@ def add_user():
     username = data.get("username")
     if not username:
         return {"error": "Username is required"}, 400
-    if username in users:
-        return {"error": "Username already exists"}, 400
     users[username] = {
         "username": username,
         "name": data.get("name"),
