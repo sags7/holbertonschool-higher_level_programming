@@ -16,16 +16,26 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    """
+    Returns a simple message to indicate the server is running
+    """
     return "Welcome to the Flask API!"
 
 
 @app.route("/status")
 def status():
+    """
+    Returns a simple message to indicate the server is running
+    """
     return "OK"
 
 
 @app.route("/users/<username>", methods=["GET"])
 def get_user(username):
+    """
+    Returns the user data for the specified username if found
+    """
+    
     if username in users:
         return jsonify(users[username])
     else:
@@ -34,6 +44,11 @@ def get_user(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
+    """
+    Adds a new user to the users dictionary using data from the request
+    and handles incomplete or missing data with an error message
+    """
+    
     data = request.get_json()
     username = data.get("username")
     if not username:
@@ -51,4 +66,11 @@ def add_user():
 
 @app.route("/data")
 def serve_data():
+    """
+    Returns a list of all usernames in the users dictionary
+    """  
     return jsonify(list(users.keys()))
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
