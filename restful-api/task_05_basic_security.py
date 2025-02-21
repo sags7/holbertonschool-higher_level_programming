@@ -1,10 +1,3 @@
-#!/usr/bin/python3
-"""
-Sets up a simple Flask application
-with basic authentication and authorization
-using Flask-HTTPAuth.
-"""
-
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from flask_jwt_extended import (
@@ -16,10 +9,9 @@ from flask_jwt_extended import (
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.config["JWT_SECRET_KEY"] = "MYSUPERSECRETKEY" """change key later"""
+app.config["JWT_SECRET_KEY"] = "MYSUPERSECRETKEY"  # change key later
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
-
 
 users = {
     "user1": {
@@ -81,6 +73,24 @@ def admin_only():
     if get_jwt_identity()["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 401
     return jsonify(message="Admin Access: Granted"), 200
+
+
+""" Custom error handlers for JWT"""
+
+
+@jwt.unauthorized_loader
+def unauthorized_response(callback):
+    return jsonify({"error": "Missing Authorization Header"}), 401
+
+
+@jwt.invalid_token_loader
+def invalid_token_response(callback):
+    return jsonify({"error": "Invalid Token"}), 401
+
+
+@jwt.expired_token_loader
+def expired_token_response(jwt_header, jwt_payload):
+    return jsonify({"error": "Token has expired"}), 401
 
 
 if __name__ == "__main__":
