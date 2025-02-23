@@ -15,6 +15,7 @@ from flask_jwt_extended import (
     get_jwt_identity,
 )
 
+
 """
 I should change this later with env variables
 """
@@ -25,7 +26,7 @@ auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run()
 
 users = {
     "user1": {
@@ -81,6 +82,7 @@ def admin_only():
     if get_jwt_identity()["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
     return "Admin Access: Granted"
+
 
 @app.route("/")
 def home():
