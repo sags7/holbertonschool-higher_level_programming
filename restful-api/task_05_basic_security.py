@@ -67,7 +67,7 @@ def login():
             identity={"username": username, "role": user["role"]}
         )
         return jsonify({"access_token": f"{access_token}"}), 200
-    return jsonify({"error": "Invalid username or password"}), 401
+    return jsonify({"error": "Invalid credentials"}), 401
 
 
 @app.route("/jwt-protected", methods=["GET"])
