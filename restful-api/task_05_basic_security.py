@@ -49,7 +49,7 @@ def verify_password(username, password):
         return user
 
 
-@app.route("/basic-protected", methods=["GET"])
+@app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
     return "Basic Auth: Access Granted"
