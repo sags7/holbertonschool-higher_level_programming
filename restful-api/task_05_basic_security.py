@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
 Sets up a simple Flask application
 with basic authentication and authorization
@@ -25,8 +24,6 @@ app.config["JWT_SECRET_KEY"] = "MYSUPERSECRETKEY"
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
-if __name__ == "__main__":
-    app.run()
 
 users = {
     "user1": {
@@ -112,3 +109,7 @@ def handle_revoked_token_error(err):
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
     return jsonify({"error": "Fresh token required"}), 401
+
+
+if __name__ == "__main__":
+    app.run()
