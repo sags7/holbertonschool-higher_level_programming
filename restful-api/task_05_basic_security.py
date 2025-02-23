@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+Sets up a simple Flask application
+with basic authentication and authorization
+using Flask-HTTPAuth.
+"""
+
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 from flask_jwt_extended import (
