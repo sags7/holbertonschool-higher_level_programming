@@ -84,11 +84,6 @@ def admin_only():
     return "Admin Access: Granted"
 
 
-@app.route("/")
-def home():
-    return "Welcome to the Flask API!", 200
-
-
 """ 
 Custom error handlers for JWT
 """
