@@ -14,16 +14,6 @@ from flask_jwt_extended import (
     get_jwt_identity,
 )
 from werkzeug.security import generate_password_hash, check_password_hash
-import os
-import sys
-
-# Get current PATH
-current_path = os.environ.get('PATH', '')
-
-# Add '/home/student_jail/.local/bin' to PATH if not already present
-new_path = '/home/student_jail/.local/bin'
-if new_path not in current_path:
-    os.environ['PATH'] = f"{new_path}:{current_path}"
 
 """
 I should change this later with an env variable
