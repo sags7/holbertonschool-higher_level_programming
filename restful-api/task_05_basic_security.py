@@ -19,6 +19,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 I should change this later with an env variable
 """
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "ANOTHERSECRETKEY"
 app.config["JWT_SECRET_KEY"] = "MYSUPERSECRETKEY"
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
