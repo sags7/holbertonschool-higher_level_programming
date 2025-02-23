@@ -48,9 +48,10 @@ def verify_password(username, password):
         return user
 
 
-@app.route("/")
-def home():
-    return "Welcome to the Flask API!", 200
+@app.route("/basic-protected", methods=["GET"])
+@auth.login_required
+def basic_protected():
+    return jsonify(message="Basic Auth: Access Granted"), 200
 
 
 @app.route("/login", methods=["POST"])
@@ -69,12 +70,6 @@ def login():
     return jsonify({"access_token": f"{access_token}"}), 200
 
 
-@app.route("/basic-protected", methods=["GET"])
-@auth.login_required
-def basic_protected():
-    return jsonify(message="Basic Auth: Access Granted"), 200
-
-
 @app.route("/jwt-protected", methods=["GET"])
 @jwt_required()
 def jwt_protected():
@@ -87,6 +82,11 @@ def admin_only():
     if get_jwt_identity()["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
     return jsonify(message="Admin Access: Granted"), 200
+
+
+@app.route("/")
+def home():
+    return "Welcome to the Flask API!", 200
 
 
 """ 
