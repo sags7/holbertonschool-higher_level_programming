@@ -1,9 +1,24 @@
 #!/usr/bin/python3
+"""
+This script connects to a MySQL database and retrieves all states
+from a table, ordered by id in ascending order
+
+Requirements:
+- MySQL server is running
+- hbtn_0e_usa database must exist and have a states table
+- User must have the necessary permissions
+
+Author: Juan Sebastian Aramburo
+"""
 
 import MySQLdb
 
 
 def list_states():
+    """
+    Connects to MySQL database and retrieves all states from a table
+    Raises: Exception - if unable to query database
+    """
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
