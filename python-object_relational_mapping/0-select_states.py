@@ -12,6 +12,7 @@ Author: Juan Sebastian Aramburo
 """
 
 import MySQLdb
+import sys
 
 
 def list_states():
@@ -22,8 +23,8 @@ def list_states():
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user="root",
-        passwd="root",
+        user=sys.argv[1],
+        passwd=sys.argv[2],
         db="hbtn_0e_0_usa",
         charset="utf8"
     )
