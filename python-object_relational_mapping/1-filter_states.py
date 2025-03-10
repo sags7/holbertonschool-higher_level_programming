@@ -29,7 +29,7 @@ def filter_states():
 
     cur = db.cursor()
 
-    cur.execute("SELECT `states.id`, `states.name` FROM `states` WHERE `states`.`name` LIKE `N%` ORDER BY `states`.`id` ASC")
+    cur.execute("SELECT `states`.`id`, `states`.`name` FROM `states` WHERE `states`.`name` LIKE 'N%' ORDER BY `states`.`id` ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
