@@ -18,7 +18,6 @@ import sys
 def list_states():
     """
     Connects to MySQL database and retrieves all states from a table
-    Raises: Exception - if unable to query database
     """
     db = MySQLdb.connect(
         host="localhost",
