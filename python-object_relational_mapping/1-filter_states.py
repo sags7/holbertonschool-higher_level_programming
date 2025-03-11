@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Write a script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa:
 
@@ -10,7 +11,7 @@ Results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
 
-import MySQLdb # type: ignore
+import MySQLdb
 import sys
 
 
@@ -29,10 +30,13 @@ def filter_states():
 
     cur = db.cursor()
 
-    cur.execute("SELECT `states`.`id`, `states`.`name` FROM `states` WHERE `states`.`name` LIKE 'N%' ORDER BY `states`.`id` ASC")
+    cur.execute("SELECT `states`.`id`, `states`.`name` FROM `states` WHERE `states`.`name` LIKE BINARY 'N%' ORDER BY `states`.`id` ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
+
+    cur.close()
+    db.close()
 
 
 if __name__ == "__main__":
