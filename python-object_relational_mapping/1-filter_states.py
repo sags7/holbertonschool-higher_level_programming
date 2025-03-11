@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 """
-Write a script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa:
+Write a script that lists all states with a name starting with N (upper N)
+from the database hbtn_0e_0_usa:
 
-Your script should take 3 arguments: mysql username, mysql password and database name (no argument validation needed)
+Your script should take 3 arguments: mysql username, 
+mysql password and database name (no argument validation needed)
 You must use the module MySQLdb (import MySQLdb)
 Your script should connect to a MySQL server running on localhost at port 3306
 Results must be sorted in ascending order by states.id
@@ -30,7 +32,9 @@ def filter_states():
 
     cur = db.cursor()
 
-    cur.execute("SELECT `states`.`id`, `states`.`name` FROM `states` WHERE `states`.`name` LIKE BINARY 'N%' ORDER BY `states`.`id` ASC")
+    cur.execute("SELECT `states`.`id`, `states`.`name` "
+    "FROM `states` WHERE `states`.`name` LIKE BINARY 'N%' ORDER BY `states`.`id` ASC"
+                )
     rows = cur.fetchall()
     for row in rows:
         print(row)
