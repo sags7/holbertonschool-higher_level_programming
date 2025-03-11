@@ -25,7 +25,8 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cur = db.cursor()
-    cur.execute("SELECT `id`, `state`, `name` FROM `cities`\
+    cur.execute("SELECT `cities`.`id`, `cities`.`state`, `states`.`name`\
+                FROM `cities`, `states`\
                 JOIN `states` ON `states`.`id = `cities`.`state_id`\
                 ORDER BY `cities`.`id` ASC")
     rows = cur.fetchall()
