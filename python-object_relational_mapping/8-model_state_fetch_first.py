@@ -15,11 +15,10 @@ before displaying the result
 If the table states is empty, print Nothing followed by a new line
 Your code should not be executed when imported
 """
-
+import sys
 from model_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import sys
 
 if __name__ == "__main__":
     """dialect+driver://username:password@host:port/database"""
