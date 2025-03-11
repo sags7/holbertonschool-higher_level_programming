@@ -27,7 +27,7 @@ if __name__ == "__main__":
     )
     cur = db.cursor()
     cur.execute("SELECT * FROM `states`\
-                WHERE `states`.`name` = %s", (sys.argv[4])
+                WHERE `states`.`name` = %s", (sys.argv[4],)
                 )
     rows = cur.fetchall()
     for row in rows:
