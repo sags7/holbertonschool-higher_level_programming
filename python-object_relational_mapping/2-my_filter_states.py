@@ -26,8 +26,8 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cur = db.cursor()
-    cur.execute("SELECT * FROM `states`"
-                "WHERE `states`.`name` = '{}'.format(sys.argv[4])"
+    cur.execute("SELECT * FROM `states`\
+                WHERE `states`.`name` = %s", (sys.argv[4])
                 )
     rows = cur.fetchall()
     for row in rows:
