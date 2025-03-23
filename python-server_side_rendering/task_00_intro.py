@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import re
 
 
 def generate_invitations(template: str, attendees: list[dict]):
@@ -31,10 +32,10 @@ def generate_invitations(template: str, attendees: list[dict]):
     for index, attendee in enumerate(attendees, start=1):
         invitation = template
         for key, value in attendee.items():
-            if value == "" or value is None:
+            if not value:
                 value = 'N/A'
             invitation = invitation.replace('{' + key + '}', value)
-
+        invitation = re.sub(r'\{[^}]+\}', 'N/A', invitation)
         filename = f'output_{index}.txt'
 
         if os.path.exists(filename):
