@@ -35,6 +35,6 @@ def generate_invitations(template, attendees):
                 invitation = invitation.replace(
                     '{' + key + '}', attendee[key] or 'N/A')
 
-        filename = f'invitation_{index}.txt'
+        filename = f'invitation_{int(index)}.txt'
         with os.open(filename, 'w') as file:
             file.write(invitation)
