@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import os
+
 
 def generate_invitations(template, attendees):
     """
@@ -34,5 +36,5 @@ def generate_invitations(template, attendees):
                     '{' + key + '}', attendee[key] or 'N/A')
 
         filename = f'invitation_{index}.txt'
-        with open(filename, 'w') as file:
+        with os.open(filename, 'w') as file:
             file.write(invitation)
