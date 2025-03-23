@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-import os
 
 
-def generate_invitations(template, attendees):
+def generate_invitations(template: str, attendees: list[dict]):
     """
     Generates invitation letters for attendees based on the provided template.
     attendees is a list of dictionaries, where each dictionary contains the
@@ -18,8 +17,8 @@ def generate_invitations(template, attendees):
     if not isinstance(template, str):
         print('Error: provided template is not a string')
         return
-    if not isinstance(attendees, list):
-        print('Error: provided attendees is not a list')
+    if not isinstance(attendees, list or not all(isinstance(attendee, dict) for attendee in attendees)):
+        print('Error: provided attendees is not a list of dictionaries')
         return
     if not template:
         print('Error: provided template is empty')
@@ -29,12 +28,14 @@ def generate_invitations(template, attendees):
         return
 
     for index, attendee in enumerate(attendees, start=1):
-        invitation: str = template
-        for key in ['name', 'event_title', 'event_date', 'event_location']:
-            if key in attendee:
-                invitation = invitation.replace(
-                    '{' + key + '}', attendee[key] or 'N/A')
+        invitation = template.format(
+            name=attendee.get('name', 'N/A'),
+            event_title=attendee.get('event_title', 'N/A'),
+            event_date=attendee.get('event_date', 'N/A'),
+            event_location=attendee.get('event_location', 'N/A')
+        )
 
         filename = f'invitation_{index}.txt'
-        with os.open(filename, 'w') as file:
+
+        with open(filename, 'w') as file:
             file.write(invitation)
