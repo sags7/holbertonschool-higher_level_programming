@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import os
 
 
 def generate_invitations(template: str, attendees: list[dict]):
@@ -17,7 +18,7 @@ def generate_invitations(template: str, attendees: list[dict]):
     if not isinstance(template, str):
         print('Error: provided template is not a string')
         return
-    if not isinstance(attendees, list or not all(isinstance(attendee, dict) for attendee in attendees)):
+    if not isinstance(attendees, list):
         print('Error: provided attendees is not a list of dictionaries')
         return
     if not template:
@@ -28,14 +29,15 @@ def generate_invitations(template: str, attendees: list[dict]):
         return
 
     for index, attendee in enumerate(attendees, start=1):
-        invitation = template.format(
-            name=attendee.get('name', 'N/A'),
-            event_title=attendee.get('event_title', 'N/A'),
-            event_date=attendee.get('event_date', 'N/A'),
-            event_location=attendee.get('event_location', 'N/A')
-        )
+        invitation = template
+        for key, value in attendee.items():
+            invitation = invitation.replace('{' + key + '}', value or 'N/A')
 
         filename = f'invitation_{index}.txt'
+
+        if os.path.exists(filename):
+            print(f'Error: file {filename} already exists')
+            continue
 
         with open(filename, 'w') as file:
             file.write(invitation)
