@@ -31,7 +31,9 @@ def generate_invitations(template: str, attendees: list[dict]):
     for index, attendee in enumerate(attendees, start=1):
         invitation = template
         for key, value in attendee.items():
-            invitation = invitation.replace('{' + key + '}', value or 'N/A')
+            if value == "" or value is None:
+                value = 'N/A'
+            invitation = invitation.replace('{' + key + '}')
 
         filename = f'output_{index}.txt'
 
