@@ -33,7 +33,7 @@ def generate_invitations(template: str, attendees: list[dict]):
         for key, value in attendee.items():
             invitation = invitation.replace('{' + key + '}', value or 'N/A')
 
-        filename = f'invitation_{index}.txt'
+        filename = f'output_{index}.txt'
 
         if os.path.exists(filename):
             print(f'Error: file {filename} already exists')
