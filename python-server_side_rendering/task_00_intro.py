@@ -29,12 +29,12 @@ def generate_invitations(template, attendees):
         return
 
     for index, attendee in enumerate(attendees, start=1):
-        invitation = template
+        invitation: str = template
         for key in ['name', 'event_title', 'event_date', 'event_location']:
             if key in attendee:
                 invitation = invitation.replace(
                     '{' + key + '}', attendee[key] or 'N/A')
 
-        filename = f'invitation_{int(index)}.txt'
+        filename = f'invitation_{index}.txt'
         with os.open(filename, 'w') as file:
             file.write(invitation)
