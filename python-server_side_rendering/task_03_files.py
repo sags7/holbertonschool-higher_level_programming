@@ -12,18 +12,17 @@ Render dynamic data in HTML templates using Jinja.
 
 
 from flask import Flask, render_template, request
-import json
 import json, csv
 
 app = Flask(__name__)
 
 def read_json_file(file):
-    with open(file, 'r') as f:
+    with open(file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return data
 
 def read_csv_file(file):
-    with open(file, 'r', newline='') as f:
+    with open(file, 'r', newline='', encoding='utf-8') as f:
         data = []
         reader = csv.DictReader(f)
         for row in reader:
@@ -62,7 +61,7 @@ def display_products():
         return render_template('product_display.html', error='Wrong source')
     
     if id:
-        product = [product for product in products if product['id'] == id]
+        product = [p for p in products if str(p.get('id', '')) == id]
         if not product:
             return render_template('product_display.html', error='Product not found')
         products = product
