@@ -33,7 +33,7 @@ def generate_invitations(template: str, attendees: list[dict]):
         for key, value in attendee.items():
             if value == "" or value is None:
                 value = 'N/A'
-            invitation = invitation.replace('{' + key + '}')
+            invitation = invitation.replace('{' + key + '}', value)
 
         filename = f'output_{index}.txt'
 
