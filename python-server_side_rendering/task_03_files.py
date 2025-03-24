@@ -61,7 +61,8 @@ def display_products():
         return render_template('product_display.html', error='Wrong source')
     
     if id:
-        product = [p for p in products if str(p.get('id', '')) == id]
+        product = [p for p in products if str(p['id']) == id]
+        
         if not product:
             return render_template('product_display.html', error='Product not found')
         products = product
